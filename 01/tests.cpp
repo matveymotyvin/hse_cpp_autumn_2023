@@ -33,7 +33,7 @@ TEST(TestAlloc, makeAllocator)
     }
 
 }
-TEST(TestUtils, values)
+TEST(TestAlloc, values)
 {
     Allocator al;
     al.makeAllocator( 10 );// создаем аллокатор
