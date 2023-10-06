@@ -6,10 +6,10 @@ using letter_func = std::string (*)(std::string str);
 
 class TokenParser {
 private:
-    std::string (*StartCallback)(std::string) = nullptr;
-    std::string (*EndCallback)(std::string) = nullptr;
+	std::string (*StartCallback)(std::string) = nullptr;
+	std::string (*EndCallback)(std::string) = nullptr;
 	uint64_t (*DigitTokenCallback)(uint64_t) = nullptr; 
-    std::string (*LetterTokenCallback)(std::string) = nullptr;
+	std::string (*LetterTokenCallback)(std::string) = nullptr;
 
 public:
 	TokenParser() = default;
