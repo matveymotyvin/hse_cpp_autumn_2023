@@ -26,7 +26,7 @@ uint64_t TokenParser::convert(std::string str) {
 
 bool TokenParser::isDigit(std::string str) {
     for (auto ch : str) {
-        if (std::isdigit(ch) == 0)
+        if (std::isdigit(ch) == 0) 
             return false;
     }
     return true;
@@ -38,16 +38,16 @@ std::string TokenParser::Parse(const std::string & str)
         std::string work_str = str;
 
         if (StartCallback != nullptr)
-             work_str = StartCallback( work_str);
+             work_str = StartCallback(work_str); //callback to string before parsing
 
         std::string word = "";
         work_str += " ";
 
         for (auto ch : work_str) {
             if ((ch == ' ' || ch == '\t' || ch == '\n') && word.length() > 0) {
-                if (isDigit(word) and DigitTokenCallback != nullptr) { 
+                if (isDigit(word) and DigitTokenCallback != nullptr) { // only for digits token
 
-                    try{ 
+                    try{ // try to fetch into uint64_t size
                         uint64_t word_num = std::stoul(word);
                         word_num = DigitTokenCallback(word_num);
                         word = std::to_string(word_num);

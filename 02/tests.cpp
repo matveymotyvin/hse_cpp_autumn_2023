@@ -12,7 +12,7 @@ protected:
 
 TEST(TestUtils, test_1)
 {
-	
+	// test token callback, letter token callback and digit token callback
 	TokenParser parser;
 	std::string test = "first test 1 5 6";
 
@@ -29,7 +29,7 @@ TEST(TestUtils, test_1)
 
 TEST(TestUtils, test_2)
 {
-    
+    // test start callback and end callback
     TokenParser parser;
     auto start_callback = [](std::string s){return s.insert(7, "start_callback ");};
     parser.SetStartCallback(start_callback);
@@ -46,6 +46,7 @@ TEST(TestUtils, test_2)
 
 TEST(TestUtils, test_3)
 {
+    // test special user's callbacks and too long digit parcing
     TokenParser parser;
     auto letter_callback = [](std::string s){return s.insert(0, "str_");};
     auto digit_callback = [](uint64_t x){return x*3;};
