@@ -116,7 +116,7 @@ const Matrix::ProxyRow& Matrix::operator [] (const size_t i) const
 	if (i > shape[0]) throw std::out_of_range("Out of range");
 	return data[i];
 }
-// 
+// оператор сложения
 Matrix Matrix::operator + (const Matrix& other) const
 {	// сложение возможно только в том случае, если матрицы строго равны по размеру
 	if (shape[0] != other.getRows() || shape[1] != other.getColumns()) throw std::runtime_error("invalid shapes");
